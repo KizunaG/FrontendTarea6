@@ -1,87 +1,90 @@
-# Gestor de Expedientes e Indicios — Frontend (React + Vite + TS)
+Gestor de Expedientes e Indicios — Frontend (React + Vite + TS)
 
-SPA para gestionar **expedientes** e **indicios** con login JWT, control de acceso por **rol** (técnico | coordinador), pantallas CRUD y una intro/splash al iniciar sesión.
+Aplicación SPA para administrar expedientes e indicios. Incluye inicio de sesión con JWT, control de acceso por roles (técnico | coordinador), pantallas CRUD y una pantalla de bienvenida tras el login.
 
-## Tech stack
+Stack tecnológico
 
-- React 18 + TypeScript
-- Vite
-- React Router v6
-- Tailwind CSS (modo dark por defecto)
-- Axios (servicios HTTP)
-- Lucide-react (iconos)
+React 18 + TypeScript
 
-## Requisitos
+Vite
 
-- Node.js ≥ 18
-- npm
-- Backend corriendo en `http://localhost:3000/api` (ajustable con variable de entorno)
+React Router v6
 
----
+Tailwind CSS (tema oscuro por defecto)
 
-## Autenticación & Autorización
+Axios para llamadas HTTP
 
-- **Login**: `POST /auth/login` → guarda `access_token` (y opcional `refresh_token`) en `localStorage`.
-- **Guards**:
-  - `ProtectedRoute` verifica sesión y redirige a `/login`.
-  - `RoleRoute` sólo permite **coordinador** para la sección **Usuarios**.
-- **Header**: muestra usuario, rol, estado y botón **Cerrar sesión**.
-- **Intro/Splash**: tras login se navega a `/Splash` y luego al dashboard con un **fade** oscuro.
+Iconos con lucide-react
 
----
+Requisitos previos
 
-## Páginas clave
+Node.js ≥ 18
 
-- **Dashboard (`/`)**
-  - Accesos a **Expedientes**, **Indicios** y **Usuarios** (esta última sólo coordinador).
+npm
 
-- **Expedientes**
-  - Lista (filtros por estado/código), detalle, cambio de estado (aprobar/rechazar con justificación), activar/desactivar, crear/editar con modal.
+Backend disponible en http://localhost:3000/api (configurable vía variables de entorno)
 
-- **Indicios**
-  - Por expediente (`/expedientes/:id/indicios`): crear, editar (modal), activar/desactivar, validación de expediente existente.
+Autenticación y permisos
 
-- **Usuarios** *(sólo coordinador)*
-  - Listado paginado, búsqueda por texto, creación con feedback de errores enviados por el backend.
+Login: POST /auth/login → guarda access_token (y opcionalmente refresh_token) en localStorage.
 
-- **Acerca de (`/about`)**
-  - Información del sistema, autor y contactos (correo/teléfono como links).
+Protecciones de ruta:
 
----
+ProtectedRoute comprueba sesión y redirige a /login si no hay token.
+
+RoleRoute restringe la sección Usuarios al rol coordinador.
+
+Barra superior: muestra usuario, rol, estado de sesión y botón Salir.
+
+Pantalla de bienvenida: después de autenticarse se navega a /splash y luego al panel principal con efecto de desvanecido.
+
+Vistas principales
+
+Dashboard (/)
+
+Accesos a Expedientes, Indicios y Usuarios (esta última sólo para coordinadores).
+
+Expedientes
+
+Listado con filtros (estado/código), detalle, aprobación/rechazo con justificación, activar/desactivar, crear/editar mediante modal.
+
+Indicios
+
+Por expediente (/expedientes/:id/indicios): alta/edición (modal), activar/desactivar y validación del expediente relacionado.
+
+Usuarios (sólo coordinador)
+
+Tabla paginada con búsqueda, alta de usuarios y manejo de errores enviados por la API.
+
+Acerca de (/about)
+
+Datos del sistema y del autor (enlaces a correo/teléfono).
+
+Puesta en marcha
+
+Clonar e ingresar al proyecto
+
+git clone <URL-de-tu-repo>
+cd <carpeta-del-proyecto>
 
 
-## Configuración
+Instalar dependencias
 
-1) **Clona** el repo y entra al proyecto:
-
-```bash
-git clone https://github.com/BJCorado/FRONTEND_Gestion_de_Expedientes_e_Indicios.git
-cd expediente-ui
-```
-2) **Instala dependencias**
-
-```bash
 npm install
 
-```
 
-4) **Configura variables de entorno**
-en .env
+Configurar variables de entorno (archivo .env)
 
-```bash
-VITE_API_URL=http://localhost:3000/api   #URL del backend
-# edita VITE_API_BASE_URL si tu backend usa otro host/puerto
-```
+VITE_API_URL=http://localhost:3000/api   # URL del backend
 
-5) **scripts**
 
-```bash
-# desarrollo con HMR
+Scripts útiles
+
+# desarrollo con recarga en caliente
 npm run dev
 
-# compilar a producción
+# build de producción
 npm run build
 
-# previsualizar build
+# previsualizar la build
 npm run preview
-```
