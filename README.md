@@ -49,64 +49,6 @@ SPA para gestionar **expedientes** e **indicios** con login JWT, control de acce
 
 ---
 
-## 🎥 Demostración del sistema
-
-### 🔑 Inicio de sesión 
-![Login](./public/gifs/login.gif)
-
-### 🏠 Dashboard
-
-**Dashboard coordinador**
-![Dashboard coordinador](./public/gifs/dashboardcoordinador.gif)
-
-**Dashboard tecnico**
-![Dashboard tecnico](./public/gifs/dashboardtecnico.gif)
-
-
-### 📂 Gestión de Expedientes
-**Expedientes coordinador**
-![Expedientes coordinador](./public/gifs/expedientescoordinador.gif)
-
-**Expedientes tecnico**
-![Expedientes tecnico](./public/gifs/expedientestecnico.gif)
-
-**Crear Expedientes**
-![Expedientes crear](./public/gifs/crearexpediente.gif)
-
-**Editar Expedientes**
-![Expedientes editar](./public/gifs/editarexpediente.gif)
-
-**Aprobar Expedientes**
-![Expedientes aprobar](./public/gifs/aprobarexpediente.gif)
-
-**Rechazar Expedientes**
-![Expedientes rechazar](./public/gifs/rechazoexpediente.gif)
-
-**Expedientes activar/desactivar**
-![Expedientes activar/desactivar](./public/gifs/activardesactivar.gif)
-
-**Expedientes indicios**
-![Expedienteindicios](./public/gifs/expedienteindicios.gif)
-
-### 🧾 Indicios por expediente
-![Indicios por expediente](./public/gifs/indicios.gif)
-
-**Crear Indicios**
-![Indicios crear](./public/gifs/crearindicio.gif)
-
-**Editar Indicios**
-![Indicios editar](./public/gifs/editarindicio.gif)
-
-### 👤 Gestión de Usuarios (solo coordinador)
-![Usuarios](./public/gifs/usuarios.gif)
-
-**Crear Usuarios**
-![Usuarios Crear](./public/gifs/crearusuario.gif)
-
-### ℹ️ Acerca de / Información
-![Acerca de](./public/gifs/acercade.gif)
-
----
 
 ## Configuración
 
@@ -143,4 +85,3 @@ npm run build
 # previsualizar build
 npm run preview
 ```
-La app estará en http://localhost:5173 (por defecto Vite).
