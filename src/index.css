@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* opcional: fuente & reset pequeño */
+html, body, #root { height: 100%; }
+
